@@ -1,8 +1,8 @@
-#ANSIBLE
+# ANSIBLE
 
 ## Overview
 Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
-###Feature of ansible:
+### Feature of ansible:
     -    Automate remote system provisioning
     -    No Agent required
     -    Uses SSHd
@@ -11,7 +11,7 @@ Ansible is a radically simple IT automation engine that automates cloud provisio
     
 
 
-##Installation ubuntu 16.04
+## Installation ubuntu 16.04
 
 - Install python2.7 +
 
@@ -35,12 +35,12 @@ Ansible is a radically simple IT automation engine that automates cloud provisio
 ## Ansible Inventory
  
 
-###Overview
+### Overview
 
 Ansible uses inventory file to manage server and server groups.
 Inventory consist indivisual hostname or ip address or you can group severs by defining groups.
 
-###Creating local inventory file
+### Creating local inventory file
 Default location of inventory file:
 `/etc/ansible/hosts`
 
@@ -52,7 +52,7 @@ Lets create one inventory file:
 `touch /etc/ansible/hosts`
 
 
-###Add hosts and groups
+### Add hosts and groups
 `vim /etc/ansible/custom/hosts`
 
 Now add your hosts addresses like this:
@@ -95,10 +95,10 @@ Define key file to be used while SSH
 
 
 
-###Using custom inventory file with ansible command
+### Using custom inventory file with ansible command
 
 `ansible -i /etc/ansible/custom/hosts web  -m ping`
-###Dynamic inventory
+### Dynamic inventory
 
 If you use Amazon Web Services EC2, maintaining an inventory file might not be the best approach, because hosts may come and go over time, be managed by external applications, or you might even be using AWS autoscaling. For this reason, you can use the EC2 external inventory script.
 
@@ -144,9 +144,9 @@ Simple modules:
 
 
 
-##PLAYBOOKS: A SIMPLE+POWERFUL AUTOMATION LANGUAGE
+## PLAYBOOKS: A SIMPLE+POWERFUL AUTOMATION LANGUAGE
 
-###Overview
+### Overview
 
 Playbooks are Ansible’s configuration, deployment, and orchestration language. 
 
@@ -155,7 +155,7 @@ At a basic level, playbooks can be used to manage configurations of and deployme
 At a more advanced level, they can sequence multi-tier rollouts involving rolling updates, and can delegate actions to other hosts, interacting with monitoring servers and load balancers along the way.
 
 
-###Syntax
+### Syntax
 Playbooks are expressed in YAML format (see YAML Syntax) and have a minimum of syntax, which intentionally tries to not be a programming language or script, but rather a model of a configuration or a process.
 
 Each playbook is composed of one or more ‘plays’ in a list.
