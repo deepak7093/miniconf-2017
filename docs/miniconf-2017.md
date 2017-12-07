@@ -120,7 +120,7 @@ Simple modules:
 
 - Install Python
 
-
+`ansible all -m raw -a "apt-get install python -y" -u ubuntu --private-key ~/Downloads/mini-conf.pem -b`
 - Disk usage
 
 	`ansible all -a "df -h" -u ubuntu --private-key ~/Downloads/mini-conf.pem`
