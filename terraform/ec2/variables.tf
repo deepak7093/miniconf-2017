@@ -21,3 +21,16 @@ variable "key_name" {
 variable "ami" {
   default= ""
 }
+
+variable "environment" {
+  default = ""
+}
+
+variable "vpc_cidr" {
+  default = ""
+}
+
+
+variable "public_cidr" {
+  default = ""
+}

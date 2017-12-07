@@ -1,7 +1,7 @@
 resource "aws_security_group" "web-security-group" {
     name        = "web-security-group"
     description = "This security group will be used by EC2"
-    vpc_id      = "${aws_default_vpc.default.id}"
+    vpc_id      = "${aws_vpc.rootconf-vpc.id}"
 
     ingress {
         from_port       = 80
