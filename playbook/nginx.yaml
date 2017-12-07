@@ -1,0 +1,17 @@
+---
+- name: Setup ansible
+  hosts: web
+  remote_user: ubuntu
+  become: true
+  tasks:
+  - name: Update cache
+    apt: update_cache=true
+  - name: Install nginx package
+    apt: pkg=nginx state=installed
+    notify:
+      - start nginx
+  handlers:
+  - name: start nginx
+    service: name=nginx state=started
+
+

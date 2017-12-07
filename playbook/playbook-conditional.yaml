@@ -1,0 +1,23 @@
+---
+- name: Setup ansible
+  hosts: web
+  remote_user: ubuntu
+  become: true
+  tasks:
+  - name: Install apache2
+    apt: update_cache=true pkg=apache2 state=installed
+    when: ansible_os_family == 'Debian'
+    notify:
+      - start apache2
+  - name: Install  httpd
+    yum: pkg=httpd state=installed
+    when: ansible_os_family == 'RedHat'
+    notify:
+      - start httpd
+  handlers:
+  - name: start apache2
+    service: name=apache2 state=started
+  - name: start httpd
+    service: name=httpd state=started
+
+
