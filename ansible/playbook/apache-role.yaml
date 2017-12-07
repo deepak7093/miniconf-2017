@@ -1,0 +1,7 @@
+- name: Configure Servers
+  hosts: web
+  user: ubuntu
+  become: True
+  gather_facts: True
+  roles:
+    - role: apache
